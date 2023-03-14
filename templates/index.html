@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!--<header class="masthead">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
+                        <p class="text-light">We Love Django As much as you do &nbsp
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>-->
+    
+
+    <div class="container " id="count">
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 mt-3 left">
+                {% for post in post_list %}
+                
+                              
+                    <div class="card mb-4" style="border-radius: 20px;">
+                        <div class="card-body index1 ">
+                            <img src="{{ post.featured }}" class="rounded featured-image-list" alt="{{post.title}}"  >
+
+                           
+                            <a href="{% url 'post_detail' post.slug  %}"  style="color: inherit; font-size:30px; text-decoration: none;">{{ post.title }}</a>
+
+                            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}  </p>
+
+                            <p class="card-text">{{post.content|safe|slice:":10" }}</p>
+                            <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary-outline" style="background-color: aliceblue;"> Read More &rarr;</a>
+                            <marquee style="font-family:Book Antiqua; color: #d2c4c4; margin-left: 20px; align-items: center; justify-content: center; text-decoration: none; "  scrollamount="5" loop="infinite"><a href="{% url 'post_detail' post.slug  %}" style="text-decoration: none; color: black;" >{{ post.title }}</a></marquee>
+ 
+                                              </div>
+
+                    </div>
+                   
+                {% endfor %}
+
+            </div>
+           
+        </div>
+    </div>
+    
+    {% if is_paginated %}
+        <nav aria-label="Page navigation conatiner"></nav>
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+        </nav>
+        </div>
+    {% endif %}
+{%endblock%}

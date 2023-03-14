@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+    {% load crispy_forms_tags %}
+
+    <div class="container-cont">
+        <div class="row">
+            <div class="col-md-8 card mb-4  mt-3   top" id="main"   >
+                <div class="card-body  cartoon" id="cartoon"   >
+                    <h1>{% block title %} {{ page.title }} {% endblock title %}</h1>
+                     <!-- featured image --> 
+                     
+                    <p class=" text-muted">{{ page.author }} | {{ page.created_on }}</p>
+                    <p class="card-text ">{{ page.content | safe }}</p>
+                </div>
+            </div>
+          
+
+          
+          
+        </div>
+    </div>
+
+{% endblock content %}

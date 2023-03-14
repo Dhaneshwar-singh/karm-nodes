@@ -1,0 +1,8 @@
+{% for post in post_list %}
+
+<div class="hwrap" style="overflow: hidden; background-color: aliceblue;"><div class="hmove">
+    <a href="{% url 'post_detail' post.slug  %}"  >{{ post.title }}</a>
+
+</div></div>
+
+{% endfor %}
