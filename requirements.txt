@@ -3,6 +3,7 @@ autopep8==1.5.7
 bootstrap4==0.1.0
 Django==3.2.12
 django-ckeditor
+WhiteNoise
 gunicorn==20.1.0
 django-crispy-forms==1.13.0
 django-debug-toolbar==3.2.2
