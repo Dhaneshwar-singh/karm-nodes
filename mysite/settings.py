@@ -27,9 +27,8 @@ SECRET_KEY = "0x!b#(1*cd73w$&azzc6p+essg7v=g80ls#z&xcx*mpemx&@9$"
 DEBUG = False
 
 ALLOWED_HOSTS = [
-
     '*',
-    
+    '.vercel.app'
 ]
 
 
@@ -97,14 +96,12 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "djongo",
-         "ENFORCE_SCHEMAS": False,
-        'CLIENT' : {
-            "host" : "mongodb+srv://dhaneshwar:myblogkarmnodes@blog.uigdvwq.mongodb.net/?retryWrites=true&w=majority",
-            "name" : "blog",
-            "authMechanism" : "SCRAM-SHA-1"
-  
-        }
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        'NAME': 'yhebaytd',
+        'USER': 'yhebaytd',
+        'PASSWORD': 'KHprVpKS-gISGBzD8kwJu6kh4TjvTISn',
+        'HOST': 'tiny.db.elephantsql.com',
+        
        
            
     }
@@ -254,7 +251,7 @@ STATICFILES_DIRS = [
 ]
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
