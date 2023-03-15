@@ -1,7 +1,7 @@
 ﻿asgiref==3.4.1
 autopep8==1.5.7
 bootstrap4==0.1.0
-Django==3.2.12
+Django
 django-ckeditor==6.5.1
 django-crispy-forms==1.13.0
 django-debug-toolbar==3.2.2
