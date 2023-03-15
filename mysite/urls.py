@@ -32,6 +32,8 @@ urlpatterns = [
     path("attachments/", include("django_summernote.urls")),
     path('__debug__/', include(debug_toolbar.urls)),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root':settings.STATIC_ROOT}),
+
 ]
 
 if settings.DEBUG:
